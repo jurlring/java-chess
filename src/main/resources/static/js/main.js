@@ -79,7 +79,7 @@ async function syncBoard() {
             const positions = Object.keys(res);
             const pieces = Object.values(res);
             if (positions.length!==64){
-                alert("잘못된 게임이 생성됐습니다!\n처음 화면으로 돌아갑니다.")
+                alert("게임의 데이터가 잘못되었습니다!ㅎ\n처음 화면으로 돌아갑니다.")
                 window.location.replace("http://localhost:8080/");
             }
             const cells = document.querySelectorAll(".chessColumn");
@@ -119,7 +119,7 @@ async function changeTurn() {
     });
     console.log(turn);
     if (turn === ""){
-        alert("잘못된 게임이 생성됐습니다!\n처음 화면으로 돌아갑니다.")
+        alert("게임의 데이터가 잘못되었습니다!\n처음 화면으로 돌아갑니다.")
         window.location.replace("http://localhost:8080/");
     }
     const turnMessage = document.querySelector(".turn");
