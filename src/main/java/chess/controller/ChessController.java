@@ -9,7 +9,6 @@ import chess.dao.ChessGameRepository;
 import chess.dto.GameDto;
 import chess.dto.MoveDto;
 import chess.service.ChessService;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import spark.ModelAndView;

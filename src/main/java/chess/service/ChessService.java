@@ -32,7 +32,7 @@ public class ChessService {
 
     public String start() {
         final Long gameId = chessGameDao.save(Color.WHITE);
-        if (gameId.equals(NOT_SAVE_GAME_ID)){
+        if (gameId.equals(NOT_SAVE_GAME_ID)) {
             start();
         }
         boardDao.saveAll(gameId, Board.create());
