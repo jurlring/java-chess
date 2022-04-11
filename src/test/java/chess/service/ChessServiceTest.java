@@ -1,6 +1,7 @@
 package chess.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 import chess.domain.Board;
 import chess.domain.piece.Piece;
@@ -80,8 +81,10 @@ class ChessServiceTest {
         //when
         chessService.end(Long.valueOf(gameId));
         //then
-        assertThat(chessGameDao.getChessGameSize()).isEqualTo(0);
-        assertThat(boardDao.getBoardSize()).isEqualTo(0);
+        assertAll(
+                () -> assertThat(chessGameDao.getChessGameSize()).isEqualTo(0),
+                () -> assertThat(boardDao.getBoardSize()).isEqualTo(0)
+        );
     }
 
     @Test
