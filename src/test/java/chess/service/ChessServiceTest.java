@@ -17,8 +17,8 @@ import org.junit.jupiter.api.Test;
 
 class ChessServiceTest {
 
-    private final FakeChessGameDao chessGameDao = new FakeChessGameDao();
-    private final FakeBoardDao boardDao = new FakeBoardDao();
+    private final MockChessGameDao chessGameDao = new MockChessGameDao();
+    private final MockBoardDao boardDao = new MockBoardDao();
     private final ChessService chessService = new ChessService(chessGameDao, boardDao);
 
     @Test

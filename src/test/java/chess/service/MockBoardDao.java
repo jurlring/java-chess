@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class FakeBoardDao implements BoardDao {
+public class MockBoardDao implements BoardDao {
 
     private final Map<Long, Map<Position, Piece>> boardRepository = new LinkedHashMap<>();
     private Map<Position, Piece> fakeBoard;

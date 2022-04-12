@@ -5,7 +5,7 @@ import chess.domain.piece.Color;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class FakeChessGameDao implements ChessGameDao {
+public class MockChessGameDao implements ChessGameDao {
 
     private final Map<Long, String> chessGame = new LinkedHashMap<>();
 
