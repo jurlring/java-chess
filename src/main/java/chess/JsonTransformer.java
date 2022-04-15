@@ -14,10 +14,6 @@ public class JsonTransformer implements ResponseTransformer {
         return gson.toJson(model);
     }
 
-    public Gson getGson() {
-        return gson;
-    }
-
     public GameDto fromJsonToGameDto(final String body, final Class<GameDto> dto) {
         return gson.fromJson(body, dto);
     }
