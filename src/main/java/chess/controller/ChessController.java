@@ -39,35 +39,35 @@ public class ChessController {
 
     public void board() {
         post("/board", (req, res) -> {
-            GameDto gameDto = jsonTransformer.getGson().fromJson(req.body(), GameDto.class);
+            GameDto gameDto = jsonTransformer.fromJsonToGameDto(req.body(), GameDto.class);
             return chessService.getBoard(gameDto.getGameId());
         }, jsonTransformer);
     }
 
     public void turn() {
         post("/turn", (req, res) -> {
-            GameDto gameDto = jsonTransformer.getGson().fromJson(req.body(), GameDto.class);
+            GameDto gameDto = jsonTransformer.fromJsonToGameDto(req.body(), GameDto.class);
             return chessService.getTurn(gameDto.getGameId());
         }, jsonTransformer);
     }
 
     public void status() {
         post("/status", (req, res) -> {
-            GameDto gameDto = jsonTransformer.getGson().fromJson(req.body(), GameDto.class);
+            GameDto gameDto = jsonTransformer.fromJsonToGameDto(req.body(), GameDto.class);
             return chessService.status(gameDto.getGameId());
         }, jsonTransformer);
     }
 
     public void move() {
         post("/move", (req, res) -> {
-            MoveDto moveDto = jsonTransformer.getGson().fromJson(req.body(), MoveDto.class);
+            MoveDto moveDto = jsonTransformer.fromJsonToMoveDto(req.body(), MoveDto.class);
             return chessService.move(moveDto);
         }, jsonTransformer);
     }
 
     public void end() {
         post("/end", (req, res) -> {
-            GameDto gameDto = jsonTransformer.getGson().fromJson(req.body(), GameDto.class);
+            GameDto gameDto = jsonTransformer.fromJsonToGameDto(req.body(), GameDto.class);
             chessService.end(gameDto.getGameId());
             return "chess game end!";
         }, jsonTransformer);
